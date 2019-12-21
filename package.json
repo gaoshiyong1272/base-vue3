@@ -1,41 +1,71 @@
 {
-  "name": "vue-base3",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^3.4.3",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "vue-base3",
+    "codedir": "src",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "vue-cli-service serve",
+        "release": "vue-cli-service build",
+        "create-js": "node build/create-js.js",
+        "lint": "vue-cli-service lint"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "dependencies": {
+        "argparse": "^1.0.10",
+        "axios": "^0.19.0",
+        "babel-polyfill": "^6.26.0",
+        "core-js": "^3.4.3",
+        "element-ui": "^2.13.0",
+        "file-saver": "^2.0.2",
+        "jquery": "^3.4.1",
+        "js-base64": "^2.5.1",
+        "load-script": "^1.0.0",
+        "moment": "^2.22.2",
+        "node-notifier": "^6.0.0",
+        "simple-pinyin": "^3.0.2",
+        "vue": "^2.6.10",
+        "vue-clipboard2": "^0.3.1",
+        "vuex": "^3.1.1",
+        "xlsx": "^0.15.3"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^4.1.0",
+        "@vue/cli-plugin-eslint": "^4.1.0",
+        "@vue/cli-service": "^4.1.0",
+        "babel-eslint": "^10.0.3",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "vue-template-compiler": "^2.6.10",
+        "recursive-readdir": "^2.2.2",
+        "recursive-readdir-sync": "^1.0.6",
+        "fs-extra": "^6.0.1",
+        "fsevents": "^1.2.4",
+        "webpack-merge": "^4.2.2",
+        "copy-webpack-plugin": "^4.5.2",
+        "clean-webpack-plugin": "^0.1.19",
+        "eslint-config-standard": "^6.2.1",
+        "eslint-friendly-formatter": "^3.0.0",
+        "eslint-loader": "^1.7.1",
+        "eslint-plugin-html": "^3.0.0",
+        "eslint-plugin-promise": "^3.8.0",
+        "eslint-plugin-standard": "^2.0.1",
+        "html-webpack-plugin": "^2.28.0"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "rules": {},
+        "parserOptions": {
+            "parser": "babel-eslint"
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
 }
