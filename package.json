@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vue-cli-service serve",
         "release": "vue-cli-service build",
-        "create-js": "node build/create-js.js",
+        "create-js": "node build/create-js",
         "lint": "vue-cli-service lint"
     },
     "dependencies": {

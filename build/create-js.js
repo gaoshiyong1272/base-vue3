@@ -1,5 +1,3 @@
-"use strict";
-
 let args = process.argv.splice(2);
 const path = require('path');
 const config = require('../config');

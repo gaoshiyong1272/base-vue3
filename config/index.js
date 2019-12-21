@@ -1,5 +1,3 @@
-// see http://vuejs-templates.github.io/webpack for documentation.
-"use strict";
 const path = require('path');
 const merge = require('webpack-merge');
 const rreaddir = require('recursive-readdir-sync');
@@ -31,8 +29,9 @@ module.exports = {
     },
     dev: {
         env: require('./dev.env'),
+        host: (objectConfig.baseUrl === undefined || !objectConfig.baseUrl) ? '127.0.0.1': objectConfig.baseUrl,
         index: objectConfig.index,
-        port: objectConfig.port,
+        port: objectConfig.port === undefined ? 8090 : objectConfig.port,
         autoOpenBrowser: objectConfig.autoOpenBrowser === undefined ? true : objectConfig.autoOpenBrowser,
         proxyTable: {},
         cssSourceMap: false,
