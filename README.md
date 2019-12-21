@@ -7,18 +7,23 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run dev
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run release
+```
+### Create js file , module.exports = {} , example： fileName=test，fileName=Path/test，
+```
+npm run create-js file=fileNmae
 ```
 
-### Run your tests
+### Create js file , create helper class, example： fileName=test，fileName=Path/test，
 ```
-npm run test
+npm run create-js helper=fileNmae
 ```
+
 
 ### Lints and fixes files
 ```
