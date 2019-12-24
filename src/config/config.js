@@ -6,16 +6,17 @@ const config = {
 
 
     /**dev server port**/
-    port: 8090,
+    port: 8092,
 
     /**dev server index page**/
     index: 'index',
 
     /**dev server auto open browser**/
-    autoOpenBrowser: true,
+    autoOpenBrowser: false,
 
     /**host**/
     baseUrl: '127.0.0.1',
+    apiBaseUrl: 'http://127.0.0.1',
 
     /**
      * 版本号

@@ -29,7 +29,7 @@ module.exports = {
     },
     dev: {
         env: require('./dev.env'),
-        host: (objectConfig.baseUrl === undefined || !objectConfig.baseUrl) ? '127.0.0.1': objectConfig.baseUrl,
+        host: (objectConfig.baseUrl === undefined || !objectConfig.baseUrl) ? '127.0.0.1' : objectConfig.baseUrl,
         index: objectConfig.index,
         port: objectConfig.port === undefined ? 8090 : objectConfig.port,
         autoOpenBrowser: objectConfig.autoOpenBrowser === undefined ? true : objectConfig.autoOpenBrowser,
@@ -60,7 +60,7 @@ module.exports = {
         if (this.isDebug()) {
             return false;
         } else {
-            return this.prod.productionTwig;
+            return this.prod['productionTwig'];
         }
     },
 
@@ -74,12 +74,14 @@ module.exports = {
         entryFiles.forEach(entryFile => {
             entryFile = path.relative(this.build.entryDirectory, entryFile);
             let result = (/(.*)\.js$/).exec(entryFile);
-            if (result) {
+            if (result){
                 let name = `${result[1]}`;
                 if (name === 'manifest' || name === 'vendor' || name === 'commons') {
                     throw new Error("entry named " + name + " uses a reserved name");
                 }
                 entries[name] = path.join(this.build.entryDirectory, entryFile);
+            }else{
+                console.log('No entry file');
             }
         });
 
@@ -133,8 +135,7 @@ module.exports = {
      */
     getHelpers: function () {
         let helpers = {};
-        let helperFiles = rreaddir(this.build.helperDirectory);
-        // noinspection JSUnresolvedFunction
+        let helperFiles = rreaddir(this.build.helperDirectory) || {};
         helperFiles.forEach(helperFile => {
             helperFile = path.relative(this.build.helperDirectory, helperFile);
             let result = (/(.*)\.js$/).exec(helperFile);

@@ -1,27 +1,21 @@
-"use strict";
-
 import Vue from 'vue';
 import 'babel-polyfill';
+import Store from "@store";
 
+/**
+ * 加载ElementUI插件
+ */
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
-// /**
-//  * 加载ElementUI插件
-//  */
-// import ElementUI from 'element-ui';
-// import 'element-ui/lib/theme-chalk/index.css';
-//
-// Vue.use(ElementUI);
-//
-// /**
-//  * 复制到粘贴板功能
-//  */
-// import VueClipboard from 'vue-clipboard2';
-//
-// Vue.use(VueClipboard);
+/**
+ * 复制到粘贴板功能
+ */
+import VueClipboard from 'vue-clipboard2';
+Vue.use(VueClipboard);
 
-// noinspection JSUnresolvedVariable
 Vue.config.productionTip = (process.env.NODE_ENV !== "production");
-
 
 export default {
     DEBUG_LOG_LEVEL: 0,
@@ -36,8 +30,7 @@ export default {
     get logLevel() {
         if (this._logLevel === -1) {
             return this.isDebug ? this.DEBUG_LOG_LEVEL : this.INFO_LOG_LEVEL;
-        }
-        else {
+        } else {
             return this._logLevel;
         }
     },
@@ -47,8 +40,7 @@ export default {
     get bridge() {
         if (undefined === window.bridge) {
             return process.env.bridge;
-        }
-        else {
+        } else {
             return window.bridge;
         }
     },
@@ -60,33 +52,44 @@ export default {
             div.id = "slimvue-app";
             div.innerHTML = "<slimvue-page></slimvue-page>";
             document.body.appendChild(div);
-        }
-        else {
+        } else {
             console.warn("Div element already exists, will replace existing content.");
         }
 
         /**获取数据仓库**/
-        return  window.slimvue = new Vue({
+        window.slimvue = new Vue({
             components: {
                 "slimvue-page": vueComponent,
             },
+            store: Store,
             el: "#slimvue-app",
         });
+        return window.slimvue;
 
     },
     log: function (...args) {
-        if (this.logLevel <= this.DEFAULT_LOG_LEVEL) console.log(...args);
+        if (this.logLevel <= this.DEFAULT_LOG_LEVEL){
+            console.log(...args);
+        }
     },
     debug: function (...args) {
-        if (this.logLevel <= this.DEBUG_LOG_LEVEL) console.debug(...args);
+        if (this.logLevel <= this.DEBUG_LOG_LEVEL) {
+            console.debug(...args);
+        }
     },
     info: function (...args) {
-        if (this.logLevel <= this.INFO_LOG_LEVEL) console.info(...args);
+        if (this.logLevel <= this.INFO_LOG_LEVEL) {
+            console.info(...args);
+        }
     },
     warn: function (...args) {
-        if (this.logLevel <= this.WARNING_LOG_LEVEL) console.warn(...args);
+        if (this.logLevel <= this.WARNING_LOG_LEVEL) {
+            console.warn(...args);
+        }
     },
     error: function (...args) {
-        if (this.logLevel <= this.ERROR_LOG_LEVEL) console.error(...args);
-    },
+        if (this.logLevel <= this.ERROR_LOG_LEVEL) {
+            console.error(...args);
+        }
+    }
 };

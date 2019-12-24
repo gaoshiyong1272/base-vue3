@@ -3,6 +3,7 @@ const path = require('path');
 const config = require('../config');
 const fs = require("fs");
 const template = require('./pack-templates/js-template');
+const autoload = require('./autoload');
 
 //参数处理
 let reg = /^(file=|helper=)[a-zA-Z-_\/]{3,}$/;
@@ -102,7 +103,6 @@ let createVueFile = () => {
             let fd = fs.openSync(path.join(config.build.helperDirectory, `${name}.js`), 'w');
             fs.writeFileSync(fd, content);
             fs.closeSync(fd);
-
             console.log(`Create fileName=>${moduleName}.js is successfully`, '\n');
         }
     }

@@ -43,6 +43,10 @@ module.exports = {
         "curly"                       : [2, "all"],//必须使用 if(){} 中的{}
         'keyword-spacing'             : [0, {"after": false}], //0关闭if，for格式检查
         'comma-spacing'               : [0, {"before": false, "after": false}], //关闭参数空格处理
-        'no-unreachable'              : [0, {"before": false, "after": false}]
+        'no-unreachable'              : [0, {"before": false, "after": false}],
+        'no-cond-assign'              : 0, // 取消条件表达式中出现赋值操作符
+        'no-unneeded-ternary'         : [0, {'defaultAssignment': false}], // 禁止可以在有更简单的可替代的表达式时使用三元操作符
+        'no-throw-literal'            : 0, // 禁止抛出异常字面量 0关闭 2开启
+        'no-return-await'             : 0, // 禁止在 return 语句里使用 await
     }
 };

@@ -3,8 +3,6 @@ module.exports = {
         this.devServer(config, conf);
     },
 
-
-
     /**
      * 开发环境node http 配置
      * @param config
@@ -17,6 +15,11 @@ module.exports = {
             port: conf.build.port, // 端口
             index: `${conf.build.index}.html`, //默认打开页面
             https: false, // 启用https
+            // 设置让浏览器 overlay 同时显示警告和错误
+            overlay: {
+                warnings: false,
+                errors: false
+            }
         };
     }
 };

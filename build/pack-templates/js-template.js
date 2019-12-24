@@ -39,7 +39,7 @@ ${content}
     },
 
     import({name}){
-        return `class __codeClassFn {
+        return `class __CodeClassFn {
     constructor(options = {}){
         this.options = Object.assign({}, options);
     }
@@ -50,7 +50,7 @@ ${content}
 }
 
 const ${name} = (options = {}) => {
-    return new __codeClassFn(options);
+    return new __CodeClassFn(options);
 };
 
 export default ${name};

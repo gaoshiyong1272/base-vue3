@@ -1,4 +1,9 @@
 {
-    "@src": "website",
-    "@assets": "website/assets"
+    "@src": "src",
+    "@assets": "src/assets",
+    "@components": "src/components",
+    "@componentsSub": "src/componentsSub",
+    "@helper": "src/helper",
+    "@entries": "src/entries",
+    "@store": "src/store/app"
 }
