@@ -3,7 +3,12 @@
     "@assets": "src/assets",
     "@components": "src/components",
     "@componentsSub": "src/componentsSub",
-    "@helper": "src/helper",
+    "@helper": "src/helper/autoload",
     "@entries": "src/entries",
-    "@store": "src/store/app"
+    "@store": "src/store/app",
+    "@config": "src/config/config",
+    "@default": "theme-chalk/index.css",
+    "@blue" : "theme-blue/index.css",
+    "@green": "theme-green/index.css",
+    "@black": "theme-black/index.css"
 }

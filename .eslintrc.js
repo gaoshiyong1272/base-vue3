@@ -8,7 +8,7 @@ module.exports = {
         browser : true,
     },
     extends       : 'standard',
-    plugins       : [ 'html'],
+    plugins       : ['html'],
     // add your custom rules here
     'rules'       : {
         'semi'                        : [2, "always", {"omitLastInOneLineBlock" : false}],

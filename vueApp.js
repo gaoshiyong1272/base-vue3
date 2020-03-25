@@ -6,7 +6,10 @@ import Store from "@store";
  * 加载ElementUI插件
  */
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+/**
+ *  @blue , @green , @default, @black
+ */
+import '@black';
 Vue.use(ElementUI);
 
 /**
@@ -14,6 +17,15 @@ Vue.use(ElementUI);
  */
 import VueClipboard from 'vue-clipboard2';
 Vue.use(VueClipboard);
+
+
+/**
+ * Vue原型链挂在方法对象
+ * @type {boolean}
+ */
+import $myalert from './src/componentsJs/alert';
+Vue.prototype.$myalert = $myalert;
+
 
 Vue.config.productionTip = (process.env.NODE_ENV !== "production");
 

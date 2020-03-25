@@ -8,8 +8,8 @@ const MD5 = require('md5.js');
 import {Base64} from 'js-base64';
 import Lodash from "lodash";
 import Jquery from "jquery";
-import Helper from "../helper/autoload";
-const Config = require('../config/config');
+import Helper from "@helper";
+const Config = require('@config');
 
 /**
  * 注册vuex
