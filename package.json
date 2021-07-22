@@ -29,7 +29,7 @@
     "vue-clipboard2": "^0.3.1",
     "vue-pdf": "^4.0.8",
     "vuex": "^3.1.1",
-    "xlsx": "^0.15.3"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
